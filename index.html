@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html data-ng-app>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        <title>Angular Spike</title>
+
+        <link rel="stylesheet" href="todo.css" type="text/css" media="screen">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js" type="text/javascript"></script>
+        <script src="setup.js" type="text/javascript"></script>
+        <script src="todo.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div data-ng-controller="app.TodoController">
+            <h2>Total todos: {{totalTodos}}</h2>    
+            <ul>
+                <li data-ng-repeat="todo in todos">
+                <input type="checkbox" data-ng-model="todo.done">
+
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
